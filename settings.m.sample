@@ -16,8 +16,8 @@ avgmed = 3; % 1=average, 3=median
 
 %% timeseg
 runDPD = 1;
-DPD_sigma = 0.1;
-DPD_continous_range_threshold = 0.5;
+dpdSigma = 0.1;
+dpdContinuousRangeThreshold = 0.5;
 
 runFKS = 1;
 FKS_k = 2;
