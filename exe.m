@@ -1,10 +1,5 @@
 %------------------------------------------------------------------------
-% Programmed by ejpark (2011-12-01)
-% Modified by ejpark (2011-12-06): plotting continuous range ??, minor modifications
-% NOTES: 
-% - 1~5? ?? ??? ???
-% - D7? ???? ?? ?? ??
-% - ??? ??, ??, ?? ?? ??? ??
+% 2011-12-01 Programmed by ejpark <ejpark04@snu.ac.kr>
 %------------------------------------------------------------------------
 
 clear;
@@ -12,28 +7,26 @@ clc;
 clf;
 settings;
 addpath(genpath('./'))
+addpath(genpath(fksadir));
  
 %% input parameters
-exeopt(1) = 1;                                      % DATA INPUT - ??? ??? ???? ?? ??
-    % dataselected = [5];
-    % dataselected = [5	6  14	20	22	24	26	31	33	34	36	37	38	41	46	50];
-    dataselected = [1:62];
-exeopt(2) = 1;                                                  % PREPROCESSING - step alignment
-    avgmed = 3;                                                 %   1=avg, 3=med
-exeopt(3) = 0;                                                  % data preview (plot basic info & data)
-exeopt(4) = 1;                                                  % FRAMING - DPD
-    sig = 0.1;                                                  %   DPD parameter
-    conthr = 0.5;                                               %   continuous range threshold
-exeopt(5) = 1;                                                  % FRAMING - FKS
-    fks_k = 2;
-    fks_lambda = [0.1 0.01];
-exeopt(9) = 1;                                                  % FP pruning null
-exeopt(6) = 1;                                                  % FP pruning
-    postopt = 2;                                                %   1=??merging, 2=monotonic??, 3=FKS
-exeopt(7) = 1;                                                  % EVALUATION
-    lambda = 25;                                                %   evaluation parameter
-exeopt(8) = 0;                                                  % plotting analytical measures
-addpath(genpath('E:\Documents\MATLAB\toolbox\BSFKFolder\BSFKFolder'));   % BSFK folder location
+exeopt(1) = inputData;
+    dataselected = selectedData;
+exeopt(2) = runPreprocessing;
+    avgmed = avgmed;
+exeopt(3) = plotBasicInfo;
+exeopt(4) = runDPD;
+    sig = DPD_sigma;
+    conthr = DPD_continuous_range_threshold;
+exeopt(5) = runFKS;
+    fks_k = FKS_k;
+    fks_lambda = FKS_lambda;
+exeopt(9) = runDPDwithoutPruning;
+exeopt(6) = runDPDwithPruning;
+    postopt = pruningOption;
+exeopt(7) = runEvaluation;
+    lambda = evaluationParameter;
+exeopt(8) = plotAnalyticalMeasures;
 
 
 %% DATA INPUT

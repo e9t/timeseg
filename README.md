@@ -6,15 +6,39 @@ For more information visit: http://dmlab.snu.ac.kr/u/lucypark#data-summarization
 
 ### Configuration
 
-    $ cp settings.m.sample settings.m
+1. Input experimental settings
 
-and input appropriate values.
+    Create a settings file as below and input appropriate values.
+
+        $ cp settings.m.sample settings.m
+
+1. Format input data files
+
+    Input data files should be formatted as below:
+
+    <table>
+    <thead>
+        <tr>
+            <td>datetime</td>
+            <td>lot\_id</td>
+            <td>slot\_number</td>
+            <td>chamber\_step</td>
+            <td>data\_value</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>2009-11-15 04:08:01</td><td>A</td><td>1</td><td>a</td><td>0.613631</td></tr>
+        <tr><td>2009-11-15 04:08:02</td><td>A</td><td>1</td><td>a</td><td>0.613632</td></tr>
+        <tr><td>2009-11-15 04:08:03</td><td>A</td><td>1</td><td>a</td><td>0.613630</td></tr>
+        <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    </tbody>
+    </table>
 
 ### Run
 
 In Matlab Command Window:
 
-    >> exe_selection1_allplots
+    >> exe
 
 ### License
 
