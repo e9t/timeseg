@@ -89,17 +89,17 @@ end
 %% data preview 
 if exeopt(3) == 1
     % plot basic info
-    mkdir('Plots\\01.basicinfo');
+    mkdir('results\\Plots\\01.basicinfo');
     plotbasicinfo(ndat, maxt, nwaf, nrec,1);
     % plot data
-    mkdir('Plots/02.datapreview')
+    mkdir('results/Plots/02.datapreview')
     figure('Position', [250, 250, 1280, 480])
     for dd = 1:ndat
         datapreview(dd,dmat{dd},smat{2,dd},initialtl)
         if exeopt(2) == 1 
-            filename = sprintf('Plots/02.datapreview/D%d_SA_datapreview.png',dd);
+            filename = sprintf('results/Plots/02.datapreview/D%d_SA_datapreview.png',dd);
         else
-            filename = sprintf('Plots/02.datapreview/D%d_datapreview.png',dd);
+            filename = sprintf('results/Plots/02.datapreview/D%d_datapreview.png',dd);
         end
         screen2png(filename);
 %         saveas(gcf, filename, 'png');
@@ -108,7 +108,7 @@ if exeopt(3) == 1
 end
 
 %% FRAMING 
-mkdir('Plots/04.framing/')
+mkdir('results/Plots/04.framing/')
 % result file naming
 switch avgmed
     case 1
@@ -260,7 +260,7 @@ for dd = 1:length(dataselected)
         end      
         
     %% save plot
-    resultfilename = sprintf('Plots\\04.framing\\D%d_selected',dd);
+    resultfilename = sprintf('results\\Plots\\04.framing\\D%d_selected',dd);
     screen2png(resultfilename);
 end 
 
