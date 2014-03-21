@@ -13,13 +13,14 @@ function outvec = stats(invec)
         invec = invec';
     end
 
-    j = 1;
-    for i = 1:max(n,m)
-        if isnan(invec(i))==0
-            tmp(j) = invec(i);
-            j = j+1;
-        end
-    end 
+    tmp = invec;
+%     j = 1;
+%     for i = 1:max(n,m)
+%         if isnan(invec(i))==0
+%             tmp(j) = invec(i);
+%             j = j+1;
+%         end
+%     end 
     outvec(1) = mean(tmp);
     outvec(2) = std(tmp);
     outvec(3) = median(tmp);
