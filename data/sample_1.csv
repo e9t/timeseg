@@ -1,4 +1,4 @@
-datetime,dataset_id,row_id,given_partition,data_value
+datetime,row_id_1,row_id_2,given_partition,data_value
 2009-11-15 4:08,A,1,a,0.613630923
 2009-11-15 4:08,A,1,a,0.613630923
 2009-11-15 4:08,A,1,a,0.613630923

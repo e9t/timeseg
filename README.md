@@ -20,10 +20,10 @@ For more information visit: http://dmlab.snu.ac.kr/u/lucypark#data-summarization
     <thead>
         <tr>
             <td>datetime</td>
-            <td>lot\_id</td>
-            <td>slot\_number</td>
-            <td>chamber\_step</td>
-            <td>data\_value</td>
+            <td>row_id_1</td>
+            <td>row_id_2</td>
+            <td>given_partition</td>
+            <td>data_value</td>
         </tr>
     </thead>
     <tbody>
