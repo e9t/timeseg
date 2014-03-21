@@ -6,7 +6,6 @@ clear;
 clc;
 settings;
 addpath(genpath('./'))
-addpath(genpath(fksadir));
  
 %% input parameters
 exeopt(1) = inputData;

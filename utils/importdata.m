@@ -51,8 +51,7 @@ end
 
 % cells to matrix 
 for dd = 1:ndat          
-    ndat
-    [n,m] = size(data{dd})
+    [n,m] = size(data{dd});
     s=[]; t=[];
     for i = 1:n
         for j = 1:m
