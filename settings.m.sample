@@ -1,7 +1,6 @@
 % directory settings
 basedir = './';
-datadir = '';   # Input data directory
-fksadir = '';   # Location of Free-knot spline approximation code (http://www.mathworks.co.kr/matlabcentral/fileexchange/25872-free-knot-spline-approximation)
+datadir = './data';   # Input data directory
 
 
 % runtime options and settings
@@ -20,8 +19,8 @@ dpdSigma = 0.1;
 dpdContinuousRangeThreshold = 0.5;
 
 runFKS = 1;
-FKS_k = 2;
-FKS_lambda = [0.1 0.01];
+fksK = 2;
+fksLambda = [0.1 0.01];
 
 %% postprocessing
 runDPDwithoutPruning = 1;

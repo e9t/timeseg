@@ -4,7 +4,6 @@
 
 clear;
 clc;
-clf;
 settings;
 addpath(genpath('./'))
 addpath(genpath(fksadir));
@@ -19,8 +18,8 @@ exeopt(4) = runDPD;
     sig = dpdSigma;
     conthr = dpdContinuousRangeThreshold;
 exeopt(5) = runFKS;
-    fks_k = FKS_k;
-    fks_lambda = FKS_lambda;
+    fks_k = fksK;
+    fks_lambda = fksLambda;
 exeopt(9) = runDPDwithoutPruning;
 exeopt(6) = runDPDwithPruning;
     postopt = pruningOption;
@@ -30,21 +29,18 @@ exeopt(8) = plotAnalyticalMeasures;
 
 
 %% DATA INPUT
+fprintf('# Import data....\n')
 if exeopt(1) == 1
-    % input each data's format
-    dform{1} = [1:4];                      % data format 1 - VARIABLEs: Time, Lot ID, Slot, CH Step(character), Parameter
-    dform{2} = [5:19];                     % data format 2 - VARIABLEs: Time, Line, EQP ID, Slot, CH Step, Parameter
-    dform{3} = [23,39,40];                 % data format 3 - VARIABLEs: Time, Line, EQP ID, Lot ID, Slot, CH Step, Parameter
-    dform{4} = [20:22,24:38,41:62];        % data format 4 - VARIABLEs: Time, Lot ID, Slot, CH Step(number), Parameter
     % data import
-    [dmat, cmat, bmat, nrec] = importdata(datadir, dform); 
+    [dmat, cmat, bmat, nrec] = importdata(datadir); 
     % save data
-    save('data.mat','dform','dmat','cmat','bmat','nrec');
+    save('data/data.mat','dmat','cmat','bmat','nrec');
 else
-    load('data.mat')
+    load('data/data.mat')
 end
 
 %% calculate data specifications
+fprintf('# Preprocessing....\n')
 [ndat, nwaf, maxt, smat, wlen, ~] = datainfo(dmat,cmat);
 datasize = size(wlen);
 for dd = 1:ndat 
@@ -69,7 +65,7 @@ if exeopt(2) == 1
     % recalculate data specifications
     [ndat, nwaf, maxt, smat, wlen, ~] = datainfo(dmat,cmat);
     datasize = size(wlen);
-    save('data_SA.mat');
+    save('data/data_SA.mat');
 else % ?? ??? ??? -lucy
     [~,~,~,~,~, repframe] = datainfo(dmat,cmat);
     for i = 1:size(dmat,2)
@@ -80,6 +76,7 @@ else % ?? ??? ??? -lucy
 end
 
 %% data preview 
+fprintf('# Preview data....\n')
 if exeopt(3) == 1
     % plot basic info
     mkdir('results\\Plots\\01.basicinfo');
@@ -101,6 +98,7 @@ if exeopt(3) == 1
 end
 
 %% FRAMING 
+fprintf('# Data segmentation....\n')
 mkdir('results/Plots/04.framing/')
 % result file naming
 switch avgmed
@@ -146,6 +144,7 @@ switch postopt
 end
 figure('Position', [0, 0, 1000, 800]);   
 for dd = 1:length(dataselected)  
+    fprintf('data %d\n', dd)
     clf
     inmat = smat{2,dataselected(dd)}(avgmed,:);
     avg = smat{2,dataselected(dd)}(1,:);
