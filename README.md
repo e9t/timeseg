@@ -1,7 +1,7 @@
 # timeseg
 
 Algorithm and code for segmenting sequential numerical data, or time series data, based on its characteristics.<br>
-For more information visit: http://dmlab.snu.ac.kr/u/lucypark#data-summarization
+For more information visit: http://dmlab.snu.ac.kr/~lucypark#data-summarization
 
 <center><img src="classification.png" width="450px"></center>
 
