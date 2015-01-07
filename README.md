@@ -47,8 +47,8 @@ In Matlab Command Window:
 
 ### Acknowledgements
 
-- Bruno Luong, [Free-knot spline approximation](http://www.mathworks.co.kr/matlabcentral/fileexchange/25872-free-knot-spline-approximation), Matlab Central, 2009.
+Bruno Luong, [Free-knot spline approximation](http://www.mathworks.co.kr/matlabcentral/fileexchange/25872-free-knot-spline-approximation), Matlab Central, 2009.
 
 ### Author
 
-- [Eunjeong (Lucy) Park](http://dm.snu.ac.kr/~epark)
+[Eunjeong (Lucy) Park](http://dm.snu.ac.kr/~epark)
