@@ -45,10 +45,10 @@ In Matlab Command Window:
 
 [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-### Acknowledgements
-
-Bruno Luong, [Free-knot spline approximation](http://www.mathworks.co.kr/matlabcentral/fileexchange/25872-free-knot-spline-approximation), Matlab Central, 2009.
-
 ### Author
 
 [Eunjeong (Lucy) Park](http://dm.snu.ac.kr/~epark)
+
+### Acknowledgements
+
+Bruno Luong, [Free-knot spline approximation](http://www.mathworks.co.kr/matlabcentral/fileexchange/25872-free-knot-spline-approximation), Matlab Central, 2009.
