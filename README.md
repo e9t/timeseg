@@ -1,7 +1,6 @@
 # timeseg
 
 Algorithm and code for segmenting sequential numerical data, or time series data, based on its characteristics.<br>
-For more information visit: http://dmlab.snu.ac.kr/~lucypark#data-summarization
 
 <center><img src="classification.png" width="450px"></center>
 
@@ -49,3 +48,7 @@ In Matlab Command Window:
 ### Acknowledgements
 
 - Bruno Luong, [Free-knot spline approximation](http://www.mathworks.co.kr/matlabcentral/fileexchange/25872-free-knot-spline-approximation), Matlab Central, 2009.
+
+### Author
+
+- [Eunjeong (Lucy) Park](http://dm.snu.ac.kr/~epark)
